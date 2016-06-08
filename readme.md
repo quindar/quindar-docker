@@ -128,14 +128,14 @@ In order to verify your docker setup, we need to verify the following test cases
 https://docs.docker.com/ provides a good and concise tutorial.
 
 There are plenty of concise tutorials on docker, e.g.
-http://prakhar.me/docker-curriculum/
-https://scotch.io/tutorials/getting-started-with-docker
-http://www.slideshare.net/larrycai/learn-docker-in-90-minutes
-https://github.com/gopher-net/dockerized-net-tools/tree/master/docker-tutorial
-https://prezi.com/v1n3o4y4tvoc/get-dockerized-in-90-minutes/
-https://www.jayway.com/2015/03/21/a-not-very-short-introduction-to-docker/
-http://developers.redhat.com/blog/2014/05/15/practical-introduction-to-docker-containers/
-http://blog.flux7.com/blogs/docker/docker-tutorial-series-part-1-an-introduction
+* http://prakhar.me/docker-curriculum/
+* https://scotch.io/tutorials/getting-started-with-docker
+* http://www.slideshare.net/larrycai/learn-docker-in-90-minutes
+* https://github.com/gopher-net/dockerized-net-tools/tree/master/docker-tutorial
+* https://prezi.com/v1n3o4y4tvoc/get-dockerized-in-90-minutes/
+* https://www.jayway.com/2015/03/21/a-not-very-short-introduction-to-docker/
+* http://developers.redhat.com/blog/2014/05/15/practical-introduction-to-docker-containers/
+* http://blog.flux7.com/blogs/docker/docker-tutorial-series-part-1-an-introduction
 
 ## Setting up Your Learning Environment
 * For Windows or mac users, you may consider creating a Linux virtual machine using VirtualBox.
