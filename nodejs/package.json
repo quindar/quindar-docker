@@ -1,0 +1,19 @@
+{
+  "name": "docker-nodejs-web-server",
+  "version": "0.0.1",
+  "description": "Dockerfile template for NodeJS Web server",
+  "main": "app.js",
+  "directories": {
+    "test": "test",
+    "script": "script"
+  },
+  "dependencies": {
+    "express": "~4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ray Lai",
+  "license": "MIT"
+}
