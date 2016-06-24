@@ -39,5 +39,8 @@ RUN git clone https://github.com/jwilder/mongodb-tools
 RUN ls -al
 RUN cd ./mongodb-tools && ls -al && ./setup.sh && source ./virtualenv/bin/activate
 
+#install custom mongod.conf
+COPY ./mongod.conf /etc
+
 EXPOSE 27017
 ENTRYPOINT ["/usr/bin/mongod"]
