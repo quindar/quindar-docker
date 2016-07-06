@@ -2,7 +2,7 @@
   "name": "docker-nodejs-web-server",
   "version": "0.0.1",
   "description": "Dockerfile template for NodeJS Web server",
-  "main": "app.js",
+  "main": "server.js",
   "directories": {
     "test": "test",
     "script": "script"
