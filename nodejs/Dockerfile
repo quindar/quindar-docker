@@ -25,4 +25,4 @@ RUN cd /opt/nodejs; npm install express mocha fs supertest
 
 EXPOSE 8080
 
-CMD ["node", "/opt/nodejs/app.js"]
+CMD ["node", "/opt/nodejs/server.js"]
