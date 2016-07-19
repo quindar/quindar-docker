@@ -4,10 +4,9 @@ Updated: Jun 8, 2016
 # Overview
 The purpose of using docker container is to allow better management of creating Linux server nodes (e.g. automated, easier to upgrade), and optimizing server resources (e.g. 1 sec to start up a server node).  Container technology is usually considered the better option to optimize hardware resource because it does not use hypervisor technology to emulate the underlying hardware; it leverages native kernel and shared server resources such that the same parent docker host can run faster docker containers in the same machine.
 
-This document depicts how you can build a basic platform stack using docker container to support your development (e.g.  NodeJS server), testing, migration to production. It also covers the DevOps infrastructure including Jenkins server for continu
-ous integration.
+This document depicts how you can build a basic platform stack using docker container to support your development (e.g.  NodeJS server), testing, migration to production. It also covers the DevOps infrastructure including Jenkins server for continuous integration.
 
-Typically, DevOps engineers will create a parent docker host first, say, on RackSpace, amazon or your preferred cloud. They will only need basic components such as docker binaries, so that they can start to create new docker containers.  For example, they can create a CentOS Linux 7 host, and install docker binaries from https://docs.docker.com/engine/installation/linux/centos/.  Assuming their required docker images are already available from docker registry (public or private), they can start running new docker containers within seconds.
+Typically, DevOps engineers will create a parent docker host first on RackSpace, Amazon or a preferred cloud platform. They will only need basic components such as docker binaries to start creating new docker containers.  For example, they can create a CentOS Linux 7 host, and install docker binaries from https://docs.docker.com/engine/installation/linux/centos/.  Assuming their required docker images are already available from docker registry (public or private), they can start running new docker containers within seconds.
 
 ## Folder Structure
 This project will include 4 main dockerfile definitions to create Web application development environment based on MEAN stack (MongoDB-Express-AngularJS-NodeJS).
@@ -70,7 +69,6 @@ Example:
 ## Creating Docker Containers
 * Naming convention - define your naming convention for docker container instances, e.g. node01, node02, ... for your NodeJS server.
 * Use external data volume as shared folders for each docker container. If your docker container stores data in the mounted data volume, you can back up the data volume periodically using your cloud provider. Besides, when you restart your docker containers, or add new docker containers, they can re-use the same data without the need to migrate existing data.
-* 
 
 Common commands to manage docker containers:
 * To run or launch a new docker container 
