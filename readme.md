@@ -38,7 +38,7 @@ A basic SaaS application will require
 2. Select Create Server
 3. Specify your server size, e.g. for development server, specify 4GB memory general purpose server
 4. Your cloud provider will provide you the admin/root password. You can save it in a secure place.
-5. Server access - Optional: (1) Create and add your SSH public keys. This will allow you to login to your server without prompting username and password each time. The benefit is that Linux server will white-list the users for login only if their SSH publc keys are added to the file .ssh/authorized_keys stored in the Linux server. (2) Amazon AWS allows you to create .pem or key to login. However, if the key is stolen, then the server will be exposed to unauthorized users.
+5. Server access - Optional: (1) Create and add your SSH public keys. This will allow you to login to your server without prompting username and password each time. The benefit is that Linux server will white-list the users for login only if their SSH public keys are added to the file .ssh/authorized_keys stored in the Linux server. (2) Amazon AWS allows you to create .pem or key to login. However, if the key is stolen, then the server will be exposed to unauthorized users.
 6. Data volume - it is a common practice to attach a data volume to the Linux server to allow more storage, and faster storage (if SSD data volume is used). For docker containers, it is also common to map to shared folders from the mounted data volume, such that whenever an old or new docker container is launched, it can retrieve the same data.
 7. Admin users - you can create additional admin users.
 8. Install docker binaries and other dependencies.
