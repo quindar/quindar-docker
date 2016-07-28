@@ -10,19 +10,23 @@ RUN yum -y install vm vim-X11 vim-common vim-enhanced vim-minimal; yum clean all
 RUN yum -y install tar vim wget nc curl zip unzip sudo firefoxi git; yum clean all
 ENV TERM xterm
 
-#  Download nodejs
-RUN yum -y install nodejs npm; yum clean all
+# install nodejs 6.x
+RUN cd /tmp && curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+RUN cd /tmp && yum -y install nodejs; yum clean all
 
-# Upgrade NodeJS to v0.12
-#RUN wget https://rpm.nodesource.com/pub_0.12/el/7/x86_64/nodejs-0.12.9-1nodesource.el7.centos.x86_64.rpm
-#RUN yum -y install ./nodejs-0.12.9-1nodesource.el7.centos.x86_64.rpm; yum clean all
-RUN cd /tmp && wget http://nodejs.org/dist/v0.12.3/node-v0.12.3-linux-x64.tar.gz && cd /usr && tar --strip-components 1 -xzf /tmp/node-v0.12.3-linux-x64.tar.gz
+#Update npm
+RUN npm install npm -g
 
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+#Install nodemon (nodejs CI tool)
+RUN npm install nodemon -g
+
+#Install forever (nodejs CI tool)
+RUN npm install forever -g
+
+EXPOSE 3000
 
 ADD . /opt/nodejs
 RUN cd /opt/nodejs; npm install express mocha fs supertest
 
-EXPOSE 8080
-
-CMD ["node", "/opt/nodejs/server.js"]
+WORKDIR /opt/nodejs
+ENTRYPOINT ["forever", "--killSignal=SIGTERM", "--minUptime=10000", "--spinSleepTime=20000", "-c", "nodemon --delay 10 --exitcrash", "server.js"]
