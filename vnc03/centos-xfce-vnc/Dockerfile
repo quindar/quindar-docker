@@ -9,7 +9,7 @@ ENV DISPLAY :1
 ENV NO_VNC_HOME /root/noVNC
 ENV VNC_COL_DEPTH 24
 ENV VNC_RESOLUTION 1280x1024
-ENV VNC_PW race2space
+ENV VNC_PW XXX
 
 # install vnc, xvnc, xfce
 RUN yum -y install epel-release; yum clean all
