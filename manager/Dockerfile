@@ -17,6 +17,7 @@ ENV PATH $PATH":/opt/nodejs/bin"
 RUN npm install apidoc -g
 RUN npm install openssl -g
 RUN yum -y install openssl
+RUN npm install mocha -g
 
 WORKDIR /opt/nodejs
 
