@@ -23,10 +23,7 @@ RUN npm install nodemon -g
 #Install forever (nodejs CI tool)
 RUN npm install forever -g
 
-EXPOSE 3000
-
-ADD . /opt/nodejs
-RUN cd /opt/nodejs; npm install express mocha fs supertest
+EXPOSE 3000 3001 3002 3003
 
 WORKDIR /opt/nodejs
 ENTRYPOINT ["forever", "--killSignal=SIGTERM", "--minUptime=10000", "--spinSleepTime=20000", "-c", "nodemon --delay 10 --exitcrash", "server.js"]
