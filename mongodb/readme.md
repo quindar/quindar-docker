@@ -3,15 +3,15 @@ Updated: Jul 8, 2016
 
 ## Credentials
 * As per team discussion on 7/8/2016, we will create different passwords for test server, staging and
- production servers, but stop using 'XXX' as password.
-* For test server, we can continue to use id=XXX, password=XXX
-* For production server, we can use id=XXX, password=XXX
+ production servers, but stop using 'race2space' as password.
+* For test server, we can continue to use id=audacy, password=quindar
+* For production server, we can use id=audacyapp, password=quindar2016#
 
 On data05:
-audacy01:PRIMARY> db.createUser( { user: "XXX", pwd: "XXX", roles: [ { role: "root", db: "admin" } ] });
+audacy01:PRIMARY> db.createUser( { user: "audacyapp", pwd: "quindar2016", roles: [ { role: "root", db: "admin" } ] });
 
 if you want to change user password, try
-db.updateUser("XXX", { pwd: "XXX" })
+db.updateUser("audacyapp", { pwd: "quindar2016#" })
 
 ## Steps
 1. ssh data04.audacy.space
@@ -52,9 +52,9 @@ sudo docker run -p 3103:27017 --name data03 --hostname data03.audacy.space -d -v
 then initiate replica set and create  admin user id
 >rs.initiate()
 >use admin
->db.createUser( { user: "XXX", pwd: "XXX", roles: [ { role: "root", db: "admin" } ] });
->db.createUser( { user: "XXX", pwd: "XXX", roles: [ { role: "userAdminAnyDatabase", db: "admin" }, { role: "clusterAdmin", db: "admin" }, { role: "dbAdminAnyDatabase", db: "admin" } ] } )
->db.createUser( { user: "XXX", pwd: "XXX", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] } )
+>db.createUser( { user: "ray", pwd: "race2space", roles: [ { role: "root", db: "admin" } ] });
+>db.createUser( { user: "admin", pwd: "race2space", roles: [ { role: "userAdminAnyDatabase", db: "admin" }, { role: "clusterAdmin", db: "admin" }, { role: "dbAdminAnyDatabase", db: "admin" } ] } )
+>db.createUser( { user: "audacy", pwd: "race2space", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] } )
 
 >show users
 
@@ -67,7 +67,7 @@ audacy01:PRIMARY>
 you should login to mongodb using the previous credentials, e.g.
 
 >use admdin
->db.auth('XXX','XXX')
+>db.auth('ray','race2space')
 
 
 
@@ -87,7 +87,7 @@ repeat login and db auth, e.g.
 %mongo
 audacy01:PRIMARY> use admin
 switched to db admin
-audacy01:PRIMARY> db.auth('XXX','XXX')
+audacy01:PRIMARY> db.auth('ray','race2space')
 1
 
 8. manual add replica set members
