@@ -42,8 +42,8 @@ ENV JAVA_HOME /usr/java/latest
 
 # install GMAT
 RUN yum -y groupinstall "Development Tools"
-RUN yum -y install tcsh gtk3-devel xorg-x11-server-Xorg; yum clean all
-RUN yum -y install cmake python-pip python34 freeglut-devel mesa-libGL mesa-libGL-devel; yum clean all
+RUN yum -y install csh tcsh gtk3-devel xorg-x11-server-Xorg; yum clean all
+RUN yum -y install cmake python34 python34-devel python-pip python34 freeglut-devel mesa-libGL mesa-libGL-devel; yum clean all
 
 # install chrome browser
 ADD repos /etc/yum.repos.d/
