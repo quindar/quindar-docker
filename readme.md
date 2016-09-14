@@ -1,4 +1,4 @@
-# Quindar-docker - Managing Docker Containers
+# Quindar-server-docker - Managing Docker Containers
 Updated: Jun 8, 2016
 
 # Overview
